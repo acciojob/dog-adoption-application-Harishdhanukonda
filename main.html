@@ -8,48 +8,84 @@
 
 <body>
 	<!-- the entire body must be written by student -->
-	<form id="adoptionForm">
-    <h2>Dog Adoption Application</h2>
+	  <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="text"], select, input[type="checkbox"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
 
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required>
-    </div>
-
-    <div class="form-group">   
-
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-    </div>
-
-    <div class="form-group">
-      <label for="address">Address:</label>   
-
-      <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
-    </div>
-
-    <div class="form-group">   
-
-      <label for="dog-experience">Have you ever lived with a Dog before?</label>
-      <input type="checkbox" id="dog-experience" name="dog-experience" value="Have you ever lived with a Dog before?">   
-
-    </div>
-
-    <div class="form-group">
-      <label for="preferred-breeds">Preferred Breeds:</label>
-      <select id="preferred-breeds" name="preferred-breeds" multiple required>
-        <option value="Golden Retriever">Golden Retriever</option>
-        <option value="Labrador Retriever">Labrador Retriever</option>   
-
-        <option value="German Shepherd">German Shepherd</option>   
-
+    <form action="/submit-application" method="POST">
+        
+        <!-- Name -->
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Name" required>
+        
+        <!-- Phone Number -->
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+        
+        <!-- Address -->
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" placeholder="Address" required>
+        
+        <!-- Have you ever lived with a Dog before? -->
+        <label for="dog-experience">Have you ever lived with a Dog before?</label>
+        <input type="checkbox" id="dog-experience" name="dog_experience" value="Have you ever lived with a Dog before?" required>
+        
+        <!-- Preferred Breeds -->
+        <label for="breeds">Please select your preferred breeds</label>
+        <select id="breeds" name="breeds" multiple required>
+            <option value="labrador">Labrador</option>
+            <option value="golden_retriever">Golden Retriever</option>
+            <option value="german_shepherd">German Shepherd</option>
+            <option value="bulldog">Bulldog</option>
+            <option value="poodle">Poodle</option>
         </select>
-    </div>
-
-    <div class="form-group">
-      <button type="submit">Submit</button>
-    </div>
-  </form>
+        
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    
+    </form>
     <script type="text/javascript" src="./script.js">
 </script>
 
